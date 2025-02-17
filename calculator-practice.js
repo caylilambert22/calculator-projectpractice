@@ -25,7 +25,7 @@ numberButtons.forEach(button => {
       return;
     }
   inputField.value += button.textContent;
-  
+
 });
 });
 
@@ -37,6 +37,8 @@ clearButton.addEventListener("click", () => {
 
 
 //operations
+
+//addition
 additionButton.addEventListener("click", () => {
   const lastChar = inputField.value.slice(-1);
       if(inputField.value !== "" && !isNaN(lastChar)) {
@@ -45,9 +47,25 @@ additionButton.addEventListener("click", () => {
 })
 
 
+//subtraction
+subtractionButton.addEventListener("click", () => {
+  const lastChar = inputField.value.slice(-1);
+      if(inputField.value !== "" && !isNaN(lastChar)) {
+        inputField.value += subtractionButton.textContent;
+      }
+})
+
+//multiply
+
+multiplyButton.addEventListener("click", () => {
+  const lastChar = inputField.value.slice(-1);
+      if(inputField.value !== "" && !isNaN(lastChar)) {
+        inputField.value += multiplyButton.textContent;
+      }
+})
 //submit button - not complete
 submitButton.addEventListener("click", function() {
-  const inputValue = inputField.value;
+  let inputValue = inputField.value.replace(/x/g, "*");
   if (inputValue !== "" && !isNaN(inputValue.slice(-1))) {
   inputField.value = eval(inputValue);
   shouldClear = true;
