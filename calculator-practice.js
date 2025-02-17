@@ -79,3 +79,27 @@ submitButton.addEventListener("click", function() {
   shouldClear = true;
   }
 })
+
+
+
+document.addEventListener("keydown", function (event) {
+  let key = event.key;
+
+  if (!isNaN(key) && key !== "") {
+    inputField.value += key; }
+  else if (["x", "-", "+", "/"].includes(key) && !isNan) {
+    if (lastChar !== isNaN(lastChar) && lastChar !=="") {
+      inputField.value += key;
+    }
+  }
+  else if (key === "Enter") {
+    submitButton.click();
+  }
+  else if (key === "Backspace") {
+    inputField.value = inputField.value.slice(0, -1);
+  }
+  else if (key === "Escape") {
+    inputField.value = "";
+  }
+    }
+);
