@@ -63,6 +63,14 @@ multiplyButton.addEventListener("click", () => {
         inputField.value += multiplyButton.textContent;
       }
 })
+
+//divide 
+divideButton.addEventListener("click", () => {
+  const lastChar = inputField.value.slice(-1);
+      if(inputField.value !== "" && !isNaN(lastChar)) {
+        inputField.value += divideButton.textContent;
+      }
+})
 //submit button - not complete
 submitButton.addEventListener("click", function() {
   let inputValue = inputField.value.replace(/x/g, "*");
